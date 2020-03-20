@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import CharaterCard from "./components/CharacterCard";
-import styled from "styled-components";
+// import styled from "styled-components";
+import { Container, Row } from "reactstrap";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -27,11 +28,15 @@ const App = () => {
 
   return (
     <div className='App'>
-      <h1 className='Header'>React Wars</h1>
-      {characters.map((character, index) => {
-        // return console.log(character);
-        return <CharaterCard character={character} key={index} />;
-      })}
+      <h1 className='Header bg-success p-2 pb-4 sticky-top'>React Wars</h1>
+      <Container>
+        <Row>
+          {characters.map((character, index) => {
+            // return console.log(character);
+            return <CharaterCard character={character} key={index} />;
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
