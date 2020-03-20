@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import CharaterCard from "./components/CharacterCard";
+import Pages from "./components/Pages";
 // import styled from "styled-components";
-import { Container, Row } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -30,6 +31,11 @@ const App = () => {
     <div className='App'>
       <h1 className='Header bg-success p-2 pb-4 sticky-top'>React Wars</h1>
       <Container>
+        <Row>
+          <Col sm='12' md={{ size: 6, offset: 3 }}>
+            <Pages />
+          </Col>
+        </Row>
         <Row>
           {characters.map((character, index) => {
             // return console.log(character);
